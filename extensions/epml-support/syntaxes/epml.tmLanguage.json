@@ -1,0 +1,29 @@
+{
+	"scopeName": "source.toml",
+	"patterns": [
+		{
+			"match": "#.*$",
+			"name": "comment.line.number-sign.toml"
+		},
+		{
+			"match": "\\[\\[.*?\\]\\]",
+			"name": "entity.name.section.array-table.toml"
+		},
+		{
+			"match": "\\[.*?\\]",
+			"name": "entity.name.section.table.toml"
+		},
+		{
+			"match": "([A-Za-z0-9_-]+)\\s*=",
+			"name": "variable.other.key.toml"
+		},
+		{
+			"match": "\"([^\"\\\\]|\\\\.)*\"",
+			"name": "string.quoted.double.toml"
+		},
+		{
+			"match": "\\b[0-9]+\\b",
+			"name": "constant.numeric.integer.toml"
+		}
+	]
+}

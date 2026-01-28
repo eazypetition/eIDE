@@ -253,12 +253,12 @@ import './contrib/sash/browser/sash.contribution.js';
 import './contrib/scm/browser/scm.contribution.js';
 
 // Debug
-import './contrib/debug/browser/debug.contribution.js';
-import './contrib/debug/browser/debugEditorContribution.js';
-import './contrib/debug/browser/breakpointEditorContribution.js';
-import './contrib/debug/browser/callStackEditorContribution.js';
-import './contrib/debug/browser/repl.js';
-import './contrib/debug/browser/debugViewlet.js';
+// import './contrib/debug/browser/debug.contribution.js';
+// import './contrib/debug/browser/debugEditorContribution.js';
+// import './contrib/debug/browser/breakpointEditorContribution.js';
+// import './contrib/debug/browser/callStackEditorContribution.js';
+// import './contrib/debug/browser/repl.js';
+// import './contrib/debug/browser/debugViewlet.js';
 
 // Markers
 import './contrib/markers/browser/markers.contribution.js';

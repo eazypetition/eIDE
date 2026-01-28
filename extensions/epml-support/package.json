@@ -1,0 +1,31 @@
+{
+	"name": "epml-support",
+	"displayName": "EPML Support",
+	"description": "Syntax support for EPML files using TOML grammar",
+	"version": "1.0.0",
+	"publisher": "aditya",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "epml",
+				"aliases": [
+					"EPML"
+				],
+				"extensions": [
+					".epml"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "epml",
+				"scopeName": "source.toml",
+				"path": "./syntaxes/epml.tmLanguage.json"
+			}
+		]
+	}
+}
