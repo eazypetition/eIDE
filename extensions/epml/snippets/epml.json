@@ -1,25 +1,367 @@
 {
-  "Key-Value Pair": {
+  "EPML Comment Header": {
+    "prefix": "header",
+    "body": [
+      "# $LINE_COMMENT$LINE_COMMENT",
+      "# ${1:Section Title}",
+      "# $LINE_COMMENT$LINE_COMMENT"
+    ],
+    "description": "EPML section header comment"
+  },
+  "EPML Section Divider": {
+    "prefix": "divider",
+    "body": [
+      "# --------------------------------------------------",
+      "# ${1:Section Name}",
+      "# --------------------------------------------------"
+    ],
+    "description": "EPML section divider"
+  },
+  "EPML Field - Text Input": {
+    "prefix": "field-text",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"text\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "validation = \"${4:required|max:64}\"$0"
+    ],
+    "description": "Text input field"
+  },
+  "EPML Field - Boolean": {
+    "prefix": "field-bool",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"boolean\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "validation = \"${4:required}\"$0"
+    ],
+    "description": "Boolean/checkbox field"
+  },
+  "EPML Field - Dropdown": {
+    "prefix": "field-dropdown",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"dropdown\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "options = [${4:\"Option1\", \"Option2\"}]",
+      "validation = \"${5:required}\"$0"
+    ],
+    "description": "Dropdown/select field"
+  },
+  "EPML Field - Radio": {
+    "prefix": "field-radio",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"radio\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "options = [${4:\"opt1\", \"opt2\", \"opt3\"}]",
+      "optional = ${5:true}$0"
+    ],
+    "description": "Radio button field"
+  },
+  "EPML Field - Date": {
+    "prefix": "field-date",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"date\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "validation = \"${4:required}\"$0"
+    ],
+    "description": "Date input field"
+  },
+  "EPML Field - With Source": {
+    "prefix": "field-source",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"${3:text}\"",
+      "groupLabel = \"${4:forms.formname.part.groups.group_name}\"",
+      "source = \"${5:passport.field_name}\"",
+      "validation = \"${6:required}\"$0"
+    ],
+    "description": "Field with data source"
+  },
+  "EPML Field - Conditional (when)": {
+    "prefix": "field-when",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"${3:text}\"",
+      "when = \"${4:condition_field} == ${5:value}\"",
+      "groupLabel = \"${6:forms.formname.part.groups.group_name}\"",
+      "validation = \"${7:required}\"$0"
+    ],
+    "description": "Conditional field with 'when' clause"
+  },
+  "EPML Field - Multiple Values": {
+    "prefix": "field-multiple",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"${3:text}\"",
+      "multiple = true",
+      "groupLabel = \"${4:forms.formname.part.groups.group_name}\"",
+      "validation = \"${5:required|min:1}\"$0"
+    ],
+    "description": "Field accepting multiple values"
+  },
+  "EPML Field - Select with Source": {
+    "prefix": "field-select",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"select\"",
+      "groupLabel = \"${3:forms.formname.part.groups.group_name}\"",
+      "source = \"${4:us_states}\"",
+      "validation = \"${5:required}\"$0"
+    ],
+    "description": "Select field with data source"
+  },
+  "EPML Field - Depends On": {
+    "prefix": "field-depends",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:field_key}\"",
+      "label = \"${2:forms.formname.part.label}\"",
+      "type = \"${3:text}\"",
+      "groupLabel = \"${4:forms.formname.part.groups.group_name}\"",
+      "depends_on = \"${5:parent_field}\"",
+      "validation = \"${6:max:16}\"$0"
+    ],
+    "description": "Field that depends on another field"
+  },
+  "EPML Address Group": {
+    "prefix": "address-group",
+    "body": [
+      "# --------------------------------------------------",
+      "# ${1:Address Type} Address",
+      "# --------------------------------------------------",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2:prefix}_street\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_street\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "validation = \"required|max:128\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2}_address_type\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_address_type\"",
+      "type = \"radio\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "options = [\"apt\", \"ste\", \"flr\"]",
+      "optional = true",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2}_unit_number\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_unit_number\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "validation = \"max:16\"",
+      "depends_on = \"${2}_address_type\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2}_city\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_city\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "validation = \"required|max:64\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2}_state\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_state\"",
+      "type = \"select\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "source = \"us_states\"",
+      "validation = \"required\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${2}_zip_code\"",
+      "label = \"forms.${3:formname}.part${4:2}.${2}_zip_code\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${3:formname}.part${4:2}.groups.${2}_address\"",
+      "validation = \"required|zip_us\"$0"
+    ],
+    "description": "Complete address field group"
+  },
+  "EPML Name Fields": {
+    "prefix": "name-fields",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"${1:prefix}_family_name\"",
+      "label = \"forms.${2:formname}.part${3:2}.${1}_family_name\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${2:formname}.part${3:2}.groups.${4:legal_name}\"",
+      "validation = \"required|max:64\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${1}_given_name\"",
+      "label = \"forms.${2:formname}.part${3:2}.${1}_given_name\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${2:formname}.part${3:2}.groups.${4:legal_name}\"",
+      "validation = \"required|max:64\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"${1}_middle_name\"",
+      "label = \"forms.${2:formname}.part${3:2}.${1}_middle_name\"",
+      "type = \"text\"",
+      "groupLabel = \"forms.${2:formname}.part${3:2}.groups.${4:legal_name}\"",
+      "validation = \"max:64\"$0"
+    ],
+    "description": "Name field group (family, given, middle)"
+  },
+  "EPML Validation - Required": {
+    "prefix": "val-req",
+    "body": [
+      "validation = \"required\"$0"
+    ],
+    "description": "Required validation"
+  },
+  "EPML Validation - Max Length": {
+    "prefix": "val-max",
+    "body": [
+      "validation = \"required|max:${1:64}\"$0"
+    ],
+    "description": "Required with max length validation"
+  },
+  "EPML Validation - Regex": {
+    "prefix": "val-regex",
+    "body": [
+      "validation = \"regex:${1:^[0-9]+$}\"$0"
+    ],
+    "description": "Regex validation"
+  },
+  "EPML Validation - SSN": {
+    "prefix": "val-ssn",
+    "body": [
+      "validation = \"regex:^[0-9]{9}$\"$0"
+    ],
+    "description": "SSN validation (9 digits)"
+  },
+  "EPML Validation - SEVIS": {
+    "prefix": "val-sevis",
+    "body": [
+      "validation = \"regex:^N[0-9]{10}$\"$0"
+    ],
+    "description": "SEVIS number validation"
+  },
+  "EPML Validation - I-797 Receipt": {
+    "prefix": "val-i797",
+    "body": [
+      "validation = \"required|regex:^[A-Z]{3}[0-9]{10}$\"$0"
+    ],
+    "description": "I-797 receipt number validation"
+  },
+  "EPML Validation - Zip Code": {
+    "prefix": "val-zip",
+    "body": [
+      "validation = \"required|zip_us\"$0"
+    ],
+    "description": "US ZIP code validation"
+  },
+  "EPML Comment - Source Optional": {
+    "prefix": "comment-source",
+    "body": [
+      "# source = ${1:passport.field_name} (optional)$0"
+    ],
+    "description": "Source comment for optional auto-fill"
+  },
+  "EPML Comment - System Rule": {
+    "prefix": "comment-system",
+    "body": [
+      "# ${1:Description} → auto-${2:fill/lock} via ${3:system rule}$0"
+    ],
+    "description": "System rule comment"
+  },
+  "EPML Eligibility Category": {
+    "prefix": "eligibility-category",
+    "body": [
+      "[[parts.fields]]",
+      "key = \"eligibility_category\"",
+      "label = \"forms.${1:formname}.part${2:2}.eligibility_category\"",
+      "type = \"dropdown\"",
+      "options = [",
+      "  \"(c)(3)(A) Pre-completion OPT\",",
+      "  \"(c)(3)(B) Post-completion OPT\",",
+      "  \"(c)(3)(C) STEM OPT Extension\",",
+      "  \"(c)(26) H-4 Dependent Spouse\",",
+      "  \"(c)(8) Asylum Applicant\",",
+      "  \"(c)(35) Spouse of H-1B (I-140 Approved)\",",
+      "  \"(c)(36) Spouse of H-1B (AC21 Extension)\",",
+      "  \"Other\"",
+      "]",
+      "groupLabel = \"forms.${1:formname}.part${2:2}.groups.eligibility_category\"",
+      "validation = \"required\"$0"
+    ],
+    "description": "I-765 eligibility category dropdown"
+  },
+  "EPML STEM OPT Fields": {
+    "prefix": "stem-opt-fields",
+    "body": [
+      "# --------------------------------------------------",
+      "# STEM OPT Specific Fields (c)(3)(C)",
+      "# --------------------------------------------------",
+      "",
+      "[[parts.fields]]",
+      "key = \"sevis_number\"",
+      "label = \"forms.${1:formname}.part${2:2}.sevis_number\"",
+      "type = \"text\"",
+      "when = \"eligibility_category == '(c)(3)(C) STEM OPT Extension'\"",
+      "groupLabel = \"forms.${1:formname}.part${2:2}.groups.eligibility_category\"",
+      "validation = \"regex:^N[0-9]{10}$\"",
+      "",
+      "[[parts.fields]] ",
+      "key = \"stem_degree\" ",
+      "label = \"forms.${1:formname}.part${2:2}.stem_degree\" ",
+      "type = \"text\" ",
+      "when = \"eligibility_category == '(c)(3)(C) STEM OPT Extension'\" ",
+      "groupLabel = \"forms.${1:formname}.part${2:2}.groups.eligibility_category\"",
+      "validation = \"required|max:128\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"stem_employer_name\"",
+      "label = \"forms.${1:formname}.part${2:2}.stem_employer_name\"",
+      "type = \"text\"",
+      "when = \"eligibility_category == '(c)(3)(C) STEM OPT Extension'\"",
+      "groupLabel = \"forms.${1:formname}.part${2:2}.groups.eligibility_category\"",
+      "validation = \"required|max:128\"",
+      "",
+      "[[parts.fields]]",
+      "key = \"stem_everify_number\"",
+      "label = \"forms.${1:formname}.part${2:2}.stem_everify_number\"",
+      "type = \"text\"",
+      "when = \"eligibility_category == '(c)(3)(C) STEM OPT Extension'\"",
+      "groupLabel = \"forms.${1:formname}.part${2:2}.groups.eligibility_category\"",
+      "validation = \"required|regex:^[0-9]{4,7}$\"$0"
+    ],
+    "description": "Complete STEM OPT field group"
+  },
+  "EPML Key-Value Pair": {
     "prefix": "kv",
     "body": [
-      "${1:key} = \"${2:value}\""
+      "${1:key} = \"${2:value}\"$0"
     ],
-    "description": "Key-value pair"
+    "description": "Simple key-value pair"
   },
-  "Table": {
-    "prefix": "table",
+  "EPML Array Value": {
+    "prefix": "array-val",
     "body": [
-      "[${1:table_name}]",
-      "${2:key} = \"${3:value}\""
+      "${1:key} = [${2:\"value1\", \"value2\"}]$0"
     ],
-    "description": "TOML table"
-  },
-  "Array of Tables": {
-    "prefix": "array",
-    "body": [
-      "[[${1:array_name}]]",
-      "${2:key} = \"${3:value}\""
-    ],
-    "description": "TOML array of tables"
+    "description": "Array value assignment"
   }
 }
