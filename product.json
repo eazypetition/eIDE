@@ -81,6 +81,9 @@
 				},
 				"publisherDisplayName": "Microsoft"
 			}
+		},
+		{
+			"name": "epml"
 		}
 	],
 	"defaultChatAgent": {

@@ -1,0 +1,41 @@
+{
+  "name": "epml",
+  "displayName": "EPML Language Support",
+  "description": "EPML language support (TOML-based syntax)",
+  "version": "1.0.0",
+  "publisher": "vscode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "epml",
+        "aliases": ["EPML", "epml"],
+        "extensions": [".epml"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "epml",
+        "scopeName": "source.toml",
+        "path": "./syntaxes/epml.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "epml",
+        "path": "./snippets/epml.json"
+      }
+    ]
+  }
+}

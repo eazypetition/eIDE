@@ -1,0 +1,25 @@
+{
+  "Key-Value Pair": {
+    "prefix": "kv",
+    "body": [
+      "${1:key} = \"${2:value}\""
+    ],
+    "description": "Key-value pair"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": [
+      "[${1:table_name}]",
+      "${2:key} = \"${3:value}\""
+    ],
+    "description": "TOML table"
+  },
+  "Array of Tables": {
+    "prefix": "array",
+    "body": [
+      "[[${1:array_name}]]",
+      "${2:key} = \"${3:value}\""
+    ],
+    "description": "TOML array of tables"
+  }
+}
