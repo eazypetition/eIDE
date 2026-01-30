@@ -206,11 +206,11 @@ import './contrib/notebook/browser/notebook.contribution.js';
 import './contrib/speech/browser/speech.contribution.js';
 
 // Chat
-import './contrib/chat/browser/chat.contribution.js';
-import './contrib/inlineChat/browser/inlineChat.contribution.js';
-import './contrib/mcp/browser/mcp.contribution.js';
-import './contrib/chat/browser/chatSessions/chatSessions.contribution.js';
-import './contrib/chat/browser/contextContrib/chatContext.contribution.js';
+// import './contrib/chat/browser/chat.contribution.js';
+// import './contrib/inlineChat/browser/inlineChat.contribution.js';
+// import './contrib/mcp/browser/mcp.contribution.js';
+// import './contrib/chat/browser/chatSessions/chatSessions.contribution.js';
+// import './contrib/chat/browser/contextContrib/chatContext.contribution.js';
 
 // Interactive
 import './contrib/interactive/browser/interactive.contribution.js';
@@ -253,12 +253,12 @@ import './contrib/sash/browser/sash.contribution.js';
 import './contrib/scm/browser/scm.contribution.js';
 
 // Debug
-import './contrib/debug/browser/debug.contribution.js';
-import './contrib/debug/browser/debugEditorContribution.js';
-import './contrib/debug/browser/breakpointEditorContribution.js';
-import './contrib/debug/browser/callStackEditorContribution.js';
-import './contrib/debug/browser/repl.js';
-import './contrib/debug/browser/debugViewlet.js';
+// import './contrib/debug/browser/debug.contribution.js';
+// import './contrib/debug/browser/debugEditorContribution.js';
+// import './contrib/debug/browser/breakpointEditorContribution.js';
+// import './contrib/debug/browser/callStackEditorContribution.js';
+// import './contrib/debug/browser/repl.js';
+// import './contrib/debug/browser/debugViewlet.js';
 
 // Markers
 import './contrib/markers/browser/markers.contribution.js';
@@ -291,18 +291,18 @@ import './contrib/customEditor/browser/customEditor.contribution.js';
 import './contrib/externalUriOpener/common/externalUriOpener.contribution.js';
 
 // Extensions Management
-import './contrib/extensions/browser/extensions.contribution.js';
-import './contrib/extensions/browser/extensionsViewlet.js';
+// import './contrib/extensions/browser/extensions.contribution.js';
+// import './contrib/extensions/browser/extensionsViewlet.js';
 
 // Output View
-import './contrib/output/browser/output.contribution.js';
-import './contrib/output/browser/outputView.js';
+// import './contrib/output/browser/output.contribution.js';
+// import './contrib/output/browser/outputView.js';
 
 // Terminal
-import './contrib/terminal/terminal.all.js';
+// import './contrib/terminal/terminal.all.js';
 
 // External terminal
-import './contrib/externalTerminal/browser/externalTerminal.contribution.js';
+// import './contrib/externalTerminal/browser/externalTerminal.contribution.js';
 
 // Relauncher
 import './contrib/relauncher/browser/relauncher.contribution.js';
