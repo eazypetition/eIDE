@@ -19,6 +19,8 @@ export const all = Object.freeze<string[]>([
 	'*',
 	'build/**/*',
 	'extensions/**/*',
+	'!extensions/redhat.vscode-yaml-1.19.1/**',
+	'!extensions/atlassian.atlascode-4.0.18/**',
 	'scripts/**/*',
 	'src/**/*',
 	'test/**/*',
