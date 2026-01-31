@@ -1,0 +1,9 @@
+.ai-suggestion-feedback-actions{align-items:center;display:flex;flex-direction:row;gap:0;margin-bottom:8px}.ai-suggestion-feedback-action{align-items:center;background:transparent;border:none;border-radius:2px;color:var(--vscode-editor-foreground);cursor:pointer;display:flex}.ai-suggestion-feedback-action:hover{background:var(--vscode-button-secondaryHoverBackground)}
+
+/*!*-------------------- Atlaskit Editor Styles --------------------*!*/
+
+/*!* Fix for editor component button spacing *!*/.js-text-format-wrap span div div button{margin:0 2px}[data-testid*=ak-editor-main-toolbar]{z-index:1!important}
+
+/*!* All Atlaskit editor popup menus *!*/[aria-label*=Bold],[aria-label*=Italic],[aria-label*=Underline],[data-testid*=dropdown]{z-index:999}
+
+/*!* Override any conflicting z-index from other components *!*/.ac-form-select__menu,.ac-select__menu,[class*=Select__menu]{z-index:1000}.ProseMirror code{background-color:hsla(0,0%,100%,.1)}
